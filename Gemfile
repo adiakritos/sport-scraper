@@ -7,9 +7,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'nokogiri'
-gem 'mechanize'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+
+#scraper gems
+gem 'nokogiri'
+gem 'poltergeist'
 
 group :development do
   gem 'pry'

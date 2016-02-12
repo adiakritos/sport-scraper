@@ -4,3 +4,12 @@ This is a rails app that wills scrape these two websites:
 
 http://www.nowgoal.cc/
 http://www.flashscore.com/
+
+
+### Setup
+
+Follow PhantomJs install instructions
+
+    https://github.com/teampoltergeist/poltergeist
+
+
