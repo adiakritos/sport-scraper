@@ -11,7 +11,6 @@ gem 'nokogiri'
 gem 'mechanize'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 
-
 group :development do
   gem 'pry'
   gem 'pry-rails'

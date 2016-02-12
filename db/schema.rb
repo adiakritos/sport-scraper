@@ -11,11 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160212063557) do
+ActiveRecord::Schema.define(version: 20160212091912) do
 
-  create_table "leagues", force: :cascade do |t|
+  create_table "games", force: :cascade do |t|
+    t.string   "sport"
+    t.string   "source"
+    t.string   "home_team"
+    t.string   "away_team"
+    t.string   "league"
+    t.string   "state"
+    t.integer  "game_id"
+    t.integer  "date"
+    t.integer  "home_score"
+    t.integer  "away_score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "games", ["date"], name: "index_games_on_date"
+  add_index "games", ["league"], name: "index_games_on_league"
+  add_index "games", ["sport"], name: "index_games_on_sport"
+  add_index "games", ["state"], name: "index_games_on_state"
 
 end
