@@ -8,10 +8,7 @@ class Scraper
 
   def go
 
-    hdl = Headless.new
-    hdl.start
-
-    bw = Watir::Browser.start 'http://flashscore.com'
+   c = Capybara.default_driver = :poltergeist
 
    #doc = Nokogiri::HTML.parse(bwser.html)
 
