@@ -5,7 +5,7 @@ require 'open-uri'
 require 'pry'
 
 
-module ScrapWrap
+module ScrapWrapper
   require 'capybara'
   require 'capybara/poltergeist'
 
@@ -25,20 +25,37 @@ module ScrapWrap
 
 end
 
-
 class Scraper
-  include ScrapWrap
+  include ScrapWrapper
 
   def initialize(url)
     @url = url
     browser = new_session
     browser.visit @url
-    games = browser.all '.soccer'
+
+    @html = Nokogiri::HTML.parse(browser.html)
+
+    games = @html.css('.table-main .soccer')
+
+    game = games.first
+
+    country    = game.at_css('.country_part').text.tr(' ', '')
+    league     = game.at_css('.tournament_part').text
+    home_team  = game.at_css('.team-home span').text
+    away_team  = game.at_css('.team-away span').text
+    score      = game.at_css('.score').text
+    home_score = /^\d+*/.match(score).to_s.to_i
+    away_score = score
+    timer      = game.at_css('.timer').text
+    time       = game.at_css('.time').text
+    sport = 'soccer'
+    source = @url
+
+
+
     binding.pry
   end
 
 end
 
-hello = Scraper.new('http://flashscore.com')
-
-
+Scraper.new('http://flashscore.com')
