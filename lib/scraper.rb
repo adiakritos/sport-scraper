@@ -37,21 +37,21 @@ class Scraper
 
     games = @html.css('.table-main .soccer')
 
-    game = games.first
-
-    country    = game.at_css('.country_part').text.tr(' ', '')
-    league     = game.at_css('.tournament_part').text
-    home_team  = game.at_css('.team-home span').text
-    away_team  = game.at_css('.team-away span').text
-    score      = game.at_css('.score').text
-    home_score = /^\d+*/.match(score).to_s.to_i
-    away_score = score
-    timer      = game.at_css('.timer').text
-    time       = game.at_css('.time').text
-    sport = 'soccer'
-    source = @url
-
-
+  ##games.each do |game|
+  ##  score = game.at_css('.score').text
+  ##
+  ##  new_game.country    = game.at_css('.country_part').text.tr(' ', '')
+  ##  new_game.league     = game.at_css('.tournament_part').text
+  ##  new_game.home_team  = game.at_css('.team-home span').text
+  ##  new_game.away_team  = game.at_css('.team-away span').text
+  ##  new_game.home_score = /^\d+/.match(score).to_s.to_i
+  ##  new_game.away_score = /(?<=-).+/.match(away_score).to_s.tr(' ', '').to_i
+  ##  new_game.timer      = game.at_css('.timer').text
+  ##  new_game.time       = game.at_css('.time').text
+  ##  new_game.sport      = 'soccer'
+  ##  new_game.source     = @url
+  ##
+  ##end
 
     binding.pry
   end
