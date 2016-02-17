@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20160212091912) do
 
   create_table "games", force: :cascade do |t|
     t.string   "country"
-    t.string   "league"
+    t.string   "tournament"
     t.string   "home_team"
     t.string   "away_team"
     t.integer  "home_score"
@@ -25,14 +25,13 @@ ActiveRecord::Schema.define(version: 20160212091912) do
     t.string   "sport"
     t.string   "source"
     t.string   "state"
-    t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "games", ["league"], name: "index_games_on_league"
   add_index "games", ["source"], name: "index_games_on_source"
   add_index "games", ["sport"], name: "index_games_on_sport"
   add_index "games", ["state"], name: "index_games_on_state"
+  add_index "games", ["tournament"], name: "index_games_on_tournament"
 
 end
