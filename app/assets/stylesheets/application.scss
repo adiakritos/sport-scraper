@@ -1,1 +1,26 @@
 @import "bootstrap";
+
+table td {
+  font-size: 14px;
+}
+
+.scrollToTop{
+  width: 80px;
+  height: 80px;
+  padding: 16px;
+	text-align:center;
+  background: #1D1D1D;
+  font-weight: bold;
+  color: #FFFFFF;
+	text-decoration: none;
+	position:fixed;
+  right: 20px;
+  bottom: 20px;
+	display:none;
+  border-radius: 60px;
+  font-size: 14px;
+}
+
+.scrollToTop:hover{
+	text-decoration:none;
+}

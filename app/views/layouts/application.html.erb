@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SportScraper</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>SportScraper</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<div class="container">
-  <br>
-  <br>
-  <h1>Sports Data From FlashScore.com</h1>
-  <br>
-  <%= yield %>
-</div>
+    <div class="container">
+      <br>
+      <br>
+      <div class="page-header">
+        <h1>Sports Data From FlashScore.com</h1>
+      </div>
+      <br>
+    </div>
 
-</body>
+    <div class="container">
+      <%= yield %>
+      <a href="#" class="scrollToTop">Scroll To Top</a>
+    </div>
+
+  </body>
 </html>

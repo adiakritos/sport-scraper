@@ -1,3 +1,7 @@
+<div class="container">
+  <p>Games scraped: <%= @game_count %></p>
+</div>
+
 <table class="table">
   <thead>
     <tr>
@@ -11,18 +15,19 @@
       <th>Timer</th>
     </tr>
   </thead>
-  <tbody class="table-striped table-hover">
+  <tbody>
     <% @games.each do |g| %>
-    <tr>
-      <td><%= g.created_at %></td>
-      <td><%= g.country %></td>
-      <td><%= g.tournament %></td>
-      <td><%= g.home_team %></td>
-      <td><%= g.away_team %></td>
-      <td><%= g.home_score %> - <%= g.away_score %></td>
-      <td><%= g.time %></td>
-      <td><%= g.timer %></td>
-    </tr>
+      <tr>
+        <td><%= g.created_at.strftime("%d %b. %Y") %></td>
+        <td><%= g.country %></td>
+        <td><%= g.tournament %></td>
+        <td><%= g.home_team %></td>
+        <td><%= g.away_team %></td>
+        <td><%= g.home_score %> - <%= g.away_score %></td>
+        <td><%= g.time %></td>
+        <td><%= g.timer %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
+
